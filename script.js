@@ -101,10 +101,10 @@ app.use("/",errorController.get404)
 
 const databaseUser = process.env.DATABASE_USER;
 const databasePassword = process.env.DATABASE_PASSWORD;
-
+const port = process.env.PORT || 3000;
 mongoose.connect(`mongodb+srv://${databaseUser}:${databasePassword}@cluster0.xfs3tlc.mongodb.net/`)
     .then(()=>{
         console.log("Connected")
-        app.listen(3000)
+        app.listen(port)
     })
     .catch(err=>console.log(err))
