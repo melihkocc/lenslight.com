@@ -1,0 +1,26 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Contact
+block content 
+    .contact
+        .container
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 İletişim
+
+                .col-md-8.offset-md-2
+                    form(method="POST", action="/contact")#request.main_form
+                        .row
+                            .col-md-12
+                                input.form_control(placeholder="Your name", type="text", name="name")
+
+                            .col-md-12
+                                input.form_control(placeholder="Email", type="email", name="email")
+
+                            .col-md-12
+                                input.form_cont(placeholder="Message", type="text", name="message")
+                            
+                            button(type="submit").btn.btn-primary Gönder
+
+

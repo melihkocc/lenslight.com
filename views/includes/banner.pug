@@ -1,0 +1,29 @@
+.full_bg.bt_fe
+  .slider_main
+    .container-fluid
+      .row.d_flex
+        .col-md-5
+          .creative
+            h1 Best PHOTO GRAPHY STudio
+            a.read_more(href="/contact") Contact Us
+
+        .col-md-7
+            #carouselExample.carousel.slide
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-50.mx-auto(src="/images/img.png" alt="...")
+
+                    .carousel-item
+                        img.d-block.w-50.mx-auto(src="/images/img.png" alt="...")
+
+                    .carousel-item
+                        img.d-block.w-50.mx-auto(src="/images/img.png" alt="...")
+
+                    button.carousel-control-prev(type="button", data-bs-target="#carouselExample", data-bs-slide="prev")
+                        span.carousel-control-prev-icon(aria-hidden="true")
+                        span.visually-hidden Previous
+
+                    button.carousel-control-next(type="button", data-bs-target="#carouselExample", data-bs-slide="next")
+                        span.carousel-control-next-icon(aria-hidden="true")
+                        span.visually-hidden Next
+

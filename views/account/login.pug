@@ -1,0 +1,25 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Giriş Yap
+block content 
+    .contact
+        .container
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 Giriş Yap
+                .col-md-12 
+                    if errorMessage 
+                        .alert.alert-danger #{errorMessage}
+                .col-md-8.offset-md-2
+                    form#request.main_form(method="POST",action="/login")
+                        .row
+                            .col-md-12
+                                input.form_control(placeholder="Email", type="email", name="email")
+                            .col-md-12
+                                input.form_control(placeholder="Şifre", type="password", name="password")
+                            .col-md-12.d-flex.justify-content-between.align-items.center
+                                button(type="submit").btn.btn-dark Giriş Yap
+                                a(href="/register").text-decoration-none Kayıt Ol 
+
+

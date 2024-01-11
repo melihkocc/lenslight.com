@@ -1,0 +1,36 @@
+body.main-layout
+  // loader
+  .loader_bg
+    .loader
+      img(src='/images/loading.gif', alt='#')
+  // end loader
+
+  // header
+  header.header-area
+    .container-fluid
+      .row
+        .col-md-2.col-sm-3
+          .logo
+            a(href='index.html') lens
+              br
+              span light
+        .col-md-8.col-sm-9
+          .navbar-area
+            nav.site-navbar
+              ul
+                li: a(href='/', class=`${path == "index" ? "active" : ""}`) Home
+                li: a(href='/about', class=`${path == "about" ? "active" : ""}`) About
+                li: a(href='/gallery', class=`${path == "gallery" ? "active" : ""}`) Gallery
+                li: a(href='/contact', class=`${path == "contact" ? "active" : ""}`) Contact
+                if isAuthenticated 
+                  li: a(href='/my-likes-photos') Likes Photos
+              button.nav-toggler
+                span
+        .col-md-2.di_none
+          ul.email.text_align_right.w-100
+            if isAuthenticated
+              li: a(href='/dashboard', class=`${path == "dashboard" ? "active" : ""}`) Profile
+              li: a(href='/logout') Logout
+            else 
+              li: a(href='/login', class=`${path == "login" ? "active" : ""}`) Login
+              li: a(href='/register', class=`${path == "register" ? "active" : ""}`) Register

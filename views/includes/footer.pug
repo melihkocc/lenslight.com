@@ -1,0 +1,38 @@
+footer
+  .footer
+    .container
+      .row
+        .col-md-12
+          ul.menu_footer
+              li: a(href='/', class=`${path == "index" ? "active" : ""}`) Home
+              li: a(href='/about', class=`${path == "about" ? "active" : ""}`) About
+              li: a(href='/gallery', class=`${path == "gallery" ? "active" : ""}`) Gallery
+              li: a(href='/contact', class=`${path == "contact" ? "active" : ""}`) Contact
+        .col-md-12
+          ul.top_infomation
+            li: a(href='javascript:void(0)'): i: img(src='/images/loc.png', alt='#')
+            li: a(href='javascript:void(0)'): i: img(src='/images/call.png', alt='#')
+            li: a(href='javascript:void(0)'): i: img(src='/images/mail.png', alt='#')
+    .copyright
+      .container
+        .row.d_flex
+          .col-md-8
+            p © 2022 All Rights Reserved. Design by 
+              a(href='https://html.design/') Free html Templates
+          .col-md-4
+            ul.social_icon_bottom
+              li: a(href='Javascript:void(0)'): i.fa.fa-facebook(aria-hidden='true')
+              li: a(href='Javascript:void(0)'): i.fa.fa-twitter(aria-hidden='true')
+              li: a(href='Javascript:void(0)'): i.fa.fa-linkedin(aria-hidden='true')
+
+// end footer
+// Javascript files
+script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ,integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" ,crossorigin="anonymous")
+script(src='/js/jquery.min.js')
+script(src='/js/bootstrap.bundle.min.js')
+script(src='/js/jquery-3.0.0.min.js')
+script(src='/js/owl.carousel.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js')
+script(src='/js/custom.js')
+script(type='/text/javascript').
+  baguetteBox.run('.tz-gallery')

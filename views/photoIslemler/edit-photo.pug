@@ -1,0 +1,27 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Edit Photo
+block content 
+    .contact
+        .container
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 Resim Düzenle
+                .col-md-12 
+                    if errorMessage 
+                        .alert.alert-danger #{errorMessage}
+                .col-md-8.offset-md-2
+                    form#request.main_form(method="POST",action="/edit-photo",enctype="multipart/form-data")
+                        .row
+                            .col-md-12
+                                input.form_control(type="hidden", name="id",value=`${photo._id}`)
+                            .col-md-12
+                                input.form_control(placeholder="Name", type="text", name="name",value=`${photo.name}`)
+                            .col-md-12
+                                input.form_control(placeholder="Description", type="text", name="description",value=`${photo.description}`)
+                            .col-md-12
+                                input.form-control-file(type="file", name="image",value=`${photo.url}`)
+                            .col-md-12
+                                button(type="submit").btn.btn-dark Onayla
+

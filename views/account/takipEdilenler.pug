@@ -1,0 +1,31 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Takip Edilenler
+block content 
+    .team
+        .container_with
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 Takip Edilenler
+                each user in users
+                    .col-md-4
+                        .team_box.text_align_center
+                            .team_img
+                                a(href=`/user/${user._id}`): figure
+                                    img(src=`${user.profilePhotoUrl}`, alt="#")
+
+                        .craig
+                            h3 #{user.name} #{user.lastName}
+                            span #{user.email}
+                            ul.social_icon
+                                li
+                                    a(href="Javascript:void(0)")
+                                        i.fa.fa-facebook(aria-hidden="true")
+                                li
+                                    a(href="Javascript:void(0)")
+                                        i.fa.fa-twitter(aria-hidden="true")
+                                li
+                                    a(href="Javascript:void(0)")
+                                        i.fa.fa-linkedin(aria-hidden="true")
+

@@ -1,0 +1,19 @@
+extends ../layouts/main-layout.pug
+block title 
+    title #{photo.name}
+block content   
+    .about
+        .container
+            .row
+                .col-md-6
+                    .titlepage.text_align_left
+                        h2 #{photo.name}
+                        p #{photo.description}
+                        .w-100.d-flex.justify-content-between.align-items-center
+                            a.read_more(href=`/edit-photo/${photo._id}`) Update
+                            a.read_more(href=`/delete-photo/${photo._id}`) Delete
+
+                .col-md-6
+                    .about_img
+                        figure
+                            img(src=`${photo.url}`, alt=`${photo.name}`)

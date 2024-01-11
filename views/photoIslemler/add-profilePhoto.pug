@@ -1,0 +1,21 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Profil Fotoğrafı
+block content 
+    .contact
+        .container
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 Profil Fotoğrafı
+                .col-md-12 
+                    if errorMessage 
+                        .alert.alert-danger #{errorMessage}
+                .col-md-8.offset-md-2
+                    form#request.main_form(method="POST",action="/profilePhoto",enctype="multipart/form-data")
+                        .row
+                            .col-md-12
+                                input.form-control-file(type="file", name="image")
+                            .col-md-12
+                                button(type="submit").btn.btn-dark Yükle
+

@@ -1,0 +1,43 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Anasayfa
+block content 
+    if user 
+        h1.text-center.mb-4.text-primary-emphasis Hoşgeldin #{user.name}
+
+    include ../includes/banner.pug
+
+    .gallery
+        .container_with
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 Recent Picture Shots
+
+            .tz-gallery
+                .row
+                    each latestPhoto in latestPhotos
+                        .col-lg-4.col-md-6.ma_bottom30
+                            .lightbox
+                                img.w-100(src=`${latestPhoto.url}`, alt=`${latestPhoto.name}`)
+                                .view_main
+                                    .pose
+                                        a.read_more(href=`/photo/${latestPhoto._id}`)
+                                            img(src="images/ga.png", alt="#")
+                                        p more-or-less normal distribution of
+                                            br
+                                            | letters, as opposed to using
+    .team
+        .container_with
+            .row
+                .col-md-6
+                    .team_box.text_align_center
+                        .craig
+                            h3 Photos
+                            span #{photoNumber}
+                .col-md-6
+                    .team_box.text_align_center
+                        .craig
+                            h3 Users
+                            span #{userNumber}
+

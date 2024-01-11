@@ -1,0 +1,22 @@
+extends ../layouts/main-layout.pug
+block title 
+    title #{photo.name}
+block content   
+    .about
+        .container
+            .row
+                .col-md-6
+                    .titlepage.text_align_left
+                        h2 #{photo.name}
+                        p #{photo.description}
+                        a.read_more(href=`/user/${user._id}`) #{user.name} #{user.lastName}
+                        if isLikedByUser    
+                            a.btn.btn-secondary.mt-5(href=`/user/removeLikes/${photo.id}`) Beğenilerden Kaldır
+                        else 
+                            a.btn.btn-danger.mt-5(href=`/user/like/${photo._id}`) Beğen
+
+
+                .col-md-6
+                    .about_img
+                        figure
+                            img(src=`${photo.url}`, alt=`${photo.name}`)

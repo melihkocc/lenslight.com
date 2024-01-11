@@ -1,0 +1,51 @@
+extends ../layouts/main-layout.pug
+block title 
+    title Profile | #{user.name}
+block content 
+    .customers
+        .container
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 #{user.name}
+            .row
+                .col-md-12
+                    .satteb.text_align_center
+                        p.
+                            fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            The point of using Lorem Ipsum is that itfact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            The point of using Lorem Ipsum is that itfact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            The point of using Lorem Ipsum is that itfact that a reader will be distracted by the readable content of a page when looking at its layout.
+                            The point of using Lorem Ipsum is that it
+                        h3 Profil Fotoğrafı
+                        i
+                        img.rounded-circle(src=`${user.profilePhotoUrl}`, alt='#')
+            .row 
+                .col-md-12 
+                    a(href="/add-photo"): button.btn.btn-dark.w-50.d-block.mx-auto.mt-4 Resim Yükle
+                    a(href="/profilePhoto"): button.btn.btn-dark.w-50.d-block.mx-auto.mt-4 Profil Fotoğrafını Değiştir
+                .col-md-12.mt-4 
+                    .d-flex.justify-content-center.align-items-center 
+                        a(href="/my-followings").btn.btn-primary Takip Edilen : #{takipEdilenSayisi}
+                        a(href="/my-followers").btn.btn-primary.ms-4 Takipçi : #{takipciSayisi}
+    .team
+        .container
+            .row
+                .col-md-12
+                    .titlepage.text_align_center
+                        h2 Your Photos
+
+                each photo in photos
+                    .col-lg-4.col-md-6.ma_bottom30
+                        .lightbox
+                            img(src=`${photo.url}`, alt=`${photo.name}`)
+                            .view_main
+                                .pose
+                                    a.read_more(href=`/user/singlePhoto/${photo._id}`)
+                                        img(src="images/ga.png", alt="#")
+                                    p more-or-less normal distribution of
+                                        br
+                                        | letters, as opposed to using
+
+
+
